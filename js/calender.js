@@ -3,23 +3,21 @@ var dt=new Date();
 function renderDate(){
     dt.setDate(1);
     var day=dt.getDay();
-    console.log(dt.getDate());
     var endDate = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();
 
     var prevDate = new Date(dt.getFullYear(), dt.getMonth(), 0).getDate();
     var today=new Date();
-    console.log(today);
     var months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decembe"];
     document.getElementById("date_str").innerHTML=dt.toDateString();
     document.getElementById("month").innerHTML=months[dt.getMonth()];
 
     var cells = "";
 
-    for(x=day; x>0;x--){
+    for(let x=day; x>0;x--){
         cells += "<div class='prev_date'>"+(prevDate - x +1)+"</div>";
     }
 
-    for(i=1; i<=endDate; i++){
+    for(let i=1; i<=endDate; i++){
         if(i==today.getDate() && dt.getMonth() == today.getMonth()){
             cells += "<div class='today'>"+ i +"</div>";
         }else{
