@@ -1,3 +1,4 @@
+"use strict"
 var dt=new Date();
 function renderDate(){
     dt.setDate(1);
